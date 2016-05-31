@@ -1,0 +1,97 @@
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ * Licensed under the MIT License
+ *
+ * Sass/SCSS source: http://goo.gl/yUpMF
+ * PSD by Liam McCabe: http://goo.gl/RlGjy
+ */
+$green: $base0B;
+$lowOpacityWhite: rgba(255, 255, 255, 0.1);
+$highOpacityBlack: $base05;
+$lowOpacityBlack: rgba($base05, 0.3);
+$time: 0.15s;
+.month-picker {
+  margin: 0px auto;
+  text-align: center;
+  $line-height: .75;
+  line-height: $base-line-height*$line-height;
+}
+
+.month-picker-fieldset {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.40);
+  border-radius: $base-border-radius;
+  border: 1px solid $highOpacityBlack;
+  //  -webkit-box-shadow: inset 0 0 0 1px $highOpacityBlack, inset 0 2px 2px $lowOpacityBlack, 0 1px $lowOpacityWhite;
+//  box-shadow: inset 0 0 0 1px $highOpacityBlack, inset 0 2px 2px $lowOpacityBlack, 0 1px $lowOpacityWhite;
+}
+
+
+
+.month-picker-label {
+
+  position: relative;
+  padding: 0 1px;
+  $line-height: .75;
+  line-height: $base-line-height*$line-height;
+  font-size: $base-font-size*$line-height;
+  font-weight: 200;
+  color: $base03;
+  text-transform: uppercase;
+//    text-shadow: 0 1px 1px black;
+  -webkit-transition: transiton ease-out;
+  -moz-transition: $time ease-out;
+  -o-transition: $time ease-out;
+  transition: $time ease-out;
+
+}
+
+.month-picker-label.selected {
+  $lighterGreen: lighten($base0B, .3);
+  font-weight: 600;
+  &:before {
+    opacity: 1;
+  }
+}
+
+.month-picker-nav {
+  .year-callout {
+    font-weight: 200;
+    &:hover{
+      font-weight: 600;
+    }
+  }
+  vertical-align: inherit;
+  font-size: $base-font-size*.8;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px $lowOpacityWhite;
+  &:last-of-type {
+    vertical-align: sub;
+    padding-left: .5em;
+    .year-callout {
+      padding-right: .2em;
+    }
+  }
+  &:first-of-type {
+    vertical-align: text-bottom;
+    padding-right: .5em;
+    .year-callout {
+
+      padding-left: .2em;
+    }
+  }
+}
+.month-picker-label, .month-picker-nav {
+  display: inline-block;
+//  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//  line-height: 25px;
+  vertical-align: top;
+  cursor: pointer;
+  &:hover{
+    color:$base0E;
+    font-weight: 600;
+  }
+}

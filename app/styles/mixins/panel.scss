@@ -1,0 +1,109 @@
+@mixin panel($color, $backgroundTint: .20) {
+  background-color: transparentize($color, $backgroundTint);
+  color: $base02;
+  padding: $base-padding;
+  border: $base-border-width solid $color;
+}
+
+@mixin wall($color) {
+  @include panel($color, 0);
+  padding-right: 0;
+  padding-left: 0;
+  @include outer-container;
+  .corner-callout{
+    float: right;
+  }
+  .header {
+    @include span-columns(12);
+    @include row(table);
+
+    .meta-info {
+      @include span-columns(6);
+      padding-top: 0;
+      vertical-align: top;
+      padding-right: 0;
+      .stats {
+        @include outer-container;
+        .stat {
+          @include span-columns(12);
+          @include row(table);
+          .label, .value {
+            @include span-columns(6);
+            $line-height:.75;
+            line-height: $base-line-height*$line-height;
+            font-size: $base-font-size*$line-height;
+          }
+          .label {
+            text-align: right;
+          }
+          .value {
+            text-align: left;
+          }
+
+        }
+
+      }
+    }
+    .name {
+      @include span-columns(6);
+      font-size: $base-font-size*1.75;
+      font-weight: 100;
+    }
+    .corner-callout {
+      position: relative;
+      font-size: $base-font-size *.75;
+    }
+  }
+  .body {
+    @include span-columns(12);
+    display: inline-block;
+    padding-top: $base-padding;
+
+    h5{
+      font-weight: 200;
+    }
+  }
+
+}
+
+@mixin tag($color) {
+  @include panel($color, 0);
+  background-color: tint($color, 40%);
+  padding: $base-padding*.25;
+  border-radius: $base-border-radius;
+  white-space: nowrap;
+  &:hover {
+    -webkit-box-shadow: inset 0 0 4px white;
+    -moz-box-shadow: inset 0 0 4px white;
+    box-shadow: inset 0 0 4px white;
+
+    background-color: desaturate(tint($color, 60%), 5%);
+    border-color: darken(saturate($color, 40%), 10%);
+
+  }
+  &:active {
+    background-color: desaturate(tint($color, 60%), 20%);
+    border-color: darken(saturate($color, 40%), 20%);
+
+  }
+
+}
+
+@mixin selected-tag($color) {
+  @include tag($color);
+  background-color: tint($color, 40%);
+  padding-right: 0;
+  border-right: 0;
+  //  -webkit-border-top-left-radius: 3px;
+  //  -webkit-border-bottom-left-radius: 3px;
+  //  -moz-border-radius-topleft: 3px;
+  //  -moz-border-radius-bottomleft: 3px;
+  //  border-top-right-radius: 0px;
+  //  border-bottom-right-radius: 0px;
+
+  &:hover {
+    //    background-color: tint($color, 50% );
+    //    border-: ;
+  }
+
+}

@@ -1,0 +1,159 @@
+$color_one: #333;
+$color_two: rgba(255, 255, 255, .15);
+$color3: #595959;
+$color4: rgba(255, 255, 255, .1);
+$color5: rgba(255, 255, 255, 0);
+$segment-border-radius: 3px;
+$color6: #262626;
+$color7: rgba(0, 0, 0, .15);
+$color8: rgba(0, 0, 0, .1);
+$color9: #4e4e4e;
+$color10: #fff;
+$color11: #000;
+$color12: rgba(255, 255, 255, .05);
+
+$color_one: clear;
+$color_two: transparentize($base06, .15);
+$color3: transparentize($base0D, .05);
+$color4: $base0B;
+$color5: $base0D;
+$segment-border-radius: $base-border-radius;
+$color6: $base0D;
+$color7: transparentize($base07, .15);
+$color8: transparentize($base07, .1);
+$color9: $base02;
+$color10: $base03;
+$color11: $base03;
+$color12: transparentize($base0D, .05);
+$color13: $base08;
+$segment-font-size: $base-font-size*.8;
+$segment-line-height: $base-font-size*.85;
+
+.segmented-control {
+  background-color: $color_one;
+  list-style-type: none;
+  display: inline;
+  height: 25px;
+  padding: 1px;
+  margin: 0 em;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+
+  -webkit-box-shadow: 0 1px 0 $color_two;
+  -moz-box-shadow: 0 1px 0 $color_two;
+  box-shadow: 0 1px 0 $color_two;
+  li {
+    background-color: $color10;
+    color: $color10;
+    float: left;
+    margin-left: 1px;
+//    border-color: blue;
+    border-radius: $base-border-radius;
+    border-width: $base-border-width;
+    border:solid;
+
+    &:first-child {
+      margin-left: 0;
+      border-right-width: 0;
+      -webkit-border-top-left-radius: $segment-border-radius;
+      -webkit-border-bottom-left-radius: $segment-border-radius;
+      -moz-border-radius-topleft: $segment-border-radius;
+      -moz-border-radius-bottomleft: $segment-border-radius;
+      border-top-left-radius: $segment-border-radius;
+      border-bottom-left-radius: $segment-border-radius;
+    }
+    &:last-child {
+      border-left-width: 0;
+      -webkit-border-top-right-radius: $segment-border-radius;
+      -webkit-border-bottom-right-radius: $segment-border-radius;
+      -moz-border-radius-topright: $segment-border-radius;
+      -moz-border-radius-bottomright: $segment-border-radius;
+      border-top-right-radius: $segment-border-radius;
+      border-bottom-right-radius: $segment-border-radius;
+    }
+    button {
+      font-size: $segment-font-size;
+      background-color: clear;
+      color: $color10;
+//      font-weight: bold;
+      line-height: $segment-line-height;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      width: 90px;
+      height: 25px;
+    }
+
+
+
+  }
+
+  .green li.selected button{
+    background: $color4;
+  }
+  li.selected {
+    color: $color9;
+  }
+
+//  li, li.selected {
+//    -webkit-box-shadow: inset 1px 1px 0 $color4;
+//    -moz-box-shadow: inset 1px 1px 0 $color4;
+//    box-shadow: inset 1px 1px 0 $color4;
+//  }
+
+  button,
+  li.selected button {
+    outline: none;
+    color: $color6;
+    //  text-color: $color9;
+    //  color: $color6;
+    //  text-shadow: 0 1px 0 $color_two;
+  }
+
+  li.selected,
+  li.selected.selected {
+
+//    -webkit-box-shadow: inset 0 1px 4px $color7,
+//    inset 0 0 5px $color8;
+//    -moz-box-shadow: inset 0 1px 4px $color7,
+//    inset 0 0 5px $color8;
+//    box-shadow: inset 0 1px 4px $color7,
+//    inset 0 0 5px $color8;
+  }
+  li.selected button {
+    text-shadow: 0 1px 0 $color9;
+//    position: relative;
+//    top: 1px;
+  }
+  li.selected {
+    //  background-image:
+    //  -webkit-gradient(linear, left top, left bottom, from($color5), to($color4)),
+    //  url(../images/demos/background-segmented-control-selected.png);
+    //
+    //  background-image:
+    //  -moz-linear-gradient(0% 0% -90deg, $color5, $color4),
+    //  url(../images/demos/background-segmented-control-selected.png);
+
+    background-color: tint($color6, 40%);
+    color: $color9;
+
+  }
+  li.selected button {
+    color: $color9; /* text-shadow: 0 1px 0 $color11;*/
+  }
+
+  li.selected {
+    background: $color4;
+    -webkit-box-shadow: inset 0 1px $segment-border-radius $color7,
+    inset 0 0 5px $color12;
+    -moz-box-shadow: inset 0 1px $segment-border-radius $color7,
+    inset 0 0 5px $color12;
+    box-shadow: inset 0 1px $segment-border-radius $color7,
+    inset 0 0 5px $color12;
+  }
+
+}
+
+
